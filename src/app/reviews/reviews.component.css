@@ -1,0 +1,28 @@
+.side {
+    float: left;
+    width: 35%;
+    margin-top: 10px;
+    }
+
+.middle {
+        float: right;
+        width: 65%;
+        margin-top: 10px;
+        }
+.bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            display: inline-block;
+            }
+
+.bar-4 { height: 10px; background-color: #2196F3;}
+
+@media (max-width: 400px) {
+    .side, .middle {
+        width: 100%;
+    }
+    /* Hide the right column on small screens */
+    .right {
+        display: none;
+    }
+}

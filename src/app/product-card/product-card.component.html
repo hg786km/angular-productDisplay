@@ -1,0 +1,26 @@
+<div class="card mb-2" style="max-width: 1000px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{ product.imageUrl }}" class="card-img img-fluid" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <span class="h3">{{ product.title }}</span>
+           <p class="card-text">
+                <small class="text-primary">{{product.category}}</small><br>
+               <small class="text-muted">Last Reviewed: {{product.latestReviewDate | date }} | Created on: {{product.createdAt | date}} | Product ID: {{product.product_id}} | Domain: {{product.domain}}</small>
+            </p>
+             <h3 class = "text-danger"><strong>{{product.price}}</strong></h3>
+          <!-- Add reviews -->
+            <div class="reviews card-text"> 
+                <span class="card-title">Reviews:  <small class="text-primary">{{product.reviewCount}}</small></span>
+                <hr style="border:3px solid #f1f1f1">
+
+                <div class="list-reviews container">
+                <app-reviews *ngFor="let Score of product.topScores" [Score]="Score"></app-reviews>                     
+                 </div>
+            </div> 
+        </div>
+      </div>
+    </div>
+  </div>
